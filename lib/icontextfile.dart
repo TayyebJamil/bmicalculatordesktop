@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'constantFile.dart';
 class RepeatIconandTextwidget extends StatelessWidget {
   RepeatIconandTextwidget({@required this.iconData,this.label});
   final IconData iconData;
@@ -18,10 +19,7 @@ class RepeatIconandTextwidget extends StatelessWidget {
 
         ),
         Text(label,
-          style: TextStyle(
-            fontSize: 18.0,
-            color: Color(0xFF1D1E33),
-          ),)
+          style: kLabelStyle)
       ],
     );
   }
