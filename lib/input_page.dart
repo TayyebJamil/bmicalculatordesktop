@@ -15,20 +15,21 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleColor = deActiveColor;
-  Color feMaleColor = deActiveColor;
-  void updateColor(Gender gendertype)
-  {
-    if(gendertype==Gender.male){
-      maleColor = activeColor;
-      feMaleColor = deActiveColor;
-    }
-    if(gendertype==Gender.female){
+  Gender selectGender;
+//  Color maleColor = deActiveColor;
+  //Color feMaleColor = deActiveColor;
+  //void updateColor(Gender gendertype)
+  //{
+    //if(gendertype==Gender.male){
+      //maleColor = activeColor;
+      //feMaleColor = deActiveColor;
+    //}
+    //if(gendertype==Gender.female){
 
-      feMaleColor = activeColor;
-      maleColor = deActiveColor;
-    }
-  }
+      //feMaleColor = activeColor;
+      //maleColor = deActiveColor;
+    //}
+  //}
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +45,11 @@ class _InputPageState extends State<InputPage> {
                 onTap: ()
                 {
                   setState(() {
-                    updateColor(Gender.male);
+                    selectGender=Gender.male;
                   });
                 },
                 child: RepeatcontainerCode(
-                    colors: maleColor,
+                    colors: selectGender==Gender.male?activeColor:deActiveColor,
                     cardwidget: RepeatIconandTextwidget(
                       iconData: FontAwesomeIcons.male,
                       label: 'Male',
@@ -59,11 +60,11 @@ class _InputPageState extends State<InputPage> {
                 onTap: ()
                 {
                   setState(() {
-                    updateColor(Gender.female);
+                    selectGender=Gender.female;
                   });
                 },
                 child: RepeatcontainerCode(
-                  colors: feMaleColor,
+                  colors: selectGender==Gender.female?activeColor:deActiveColor,
                   cardwidget: RepeatIconandTextwidget(
                     iconData: FontAwesomeIcons.female,
                     label: 'Female',
