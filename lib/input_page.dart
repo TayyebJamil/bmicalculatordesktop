@@ -41,36 +41,36 @@ class _InputPageState extends State<InputPage> {
         children: <Widget>[
           Expanded(child: Row(
             children: <Widget>[
-              Expanded(child: GestureDetector(
-                onTap: ()
-                {
-                  setState(() {
-                    selectGender=Gender.male;
-                  });
-                },
+              Expanded(
                 child: RepeatcontainerCode(
+                  onpressed: (){
+                    setState(() {
+                      selectGender=Gender.male;
+                    });
+                  },
                     colors: selectGender==Gender.male?activeColor:deActiveColor,
                     cardwidget: RepeatIconandTextwidget(
                       iconData: FontAwesomeIcons.male,
                       label: 'Male',
                     ),
                 ),
-              ),),
-              Expanded(child: GestureDetector(
-                onTap: ()
-                {
-                  setState(() {
-                    selectGender=Gender.female;
-                  });
-                },
+
+              ),
+              Expanded(
                 child: RepeatcontainerCode(
+                  onpressed: (){
+                    setState(() {
+                      selectGender=Gender.female;
+                    });
+                  },
                   colors: selectGender==Gender.female?activeColor:deActiveColor,
                   cardwidget: RepeatIconandTextwidget(
                     iconData: FontAwesomeIcons.female,
                     label: 'Female',
                   ),
                 ),
-              ),),
+
+              ),
             ],
           ),),
           Expanded(child: RepeatcontainerCode(
