@@ -45,15 +45,15 @@ class ResultScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Normal',
+                    resultText.toUpperCase(),
                     style: kResultText,
                   ),
                   Text(
-                     '18.3',
+                     bmiResult,
                     style: kBMITextStyle,
                   ),
                   Text(
-                     'BMI is low You should have to work more',
+                     interpretation,
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   ),

@@ -145,7 +145,7 @@ class _InputPageState extends State<InputPage> {
                     ),
                     SizedBox(width: 10.0,),
                     RoundIcon(
-                      iconData: FontAwesomeIcons.minus,
+                      iconData: FontAwesomeIcons.plus,
                       onPress: (){
                         setState(() {
                           sliderWeight++;
@@ -188,7 +188,7 @@ class _InputPageState extends State<InputPage> {
                     ),
                     SizedBox(width: 10.0,),
                     RoundIcon(
-                      iconData: FontAwesomeIcons.minus,
+                      iconData: FontAwesomeIcons.plus,
                       onPress: (){
                         setState(() {
                           sliderAge++;
@@ -209,7 +209,11 @@ class _InputPageState extends State<InputPage> {
           GestureDetector(
             onTap: (){
               CalculatorBrain calc=CalculatorBrain(height: sliderHeight,weight: sliderWeight);
-              Navigator.push(context, MaterialPageRoute(builder:  (context)=>ResultScreen()));
+              Navigator.push(context, MaterialPageRoute(builder:  (context)=>ResultScreen(
+                bmiResult: calc.calculateBMI(),
+                resultText: calc.getResult(),
+                interpretation: calc.getInterpretation(),
+              )));
             },
             child: Container(
               child: Center(child: Text('Calculate',style: KLargeButtonsStyle,)),
