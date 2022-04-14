@@ -5,6 +5,7 @@ import 'icontextfile.dart';
 import 'containerfile.dart';
 import 'constantFile.dart';
 import 'ResultFile.dart';
+import 'CalculatorFile.dart';
 
 
 enum Gender{
@@ -207,6 +208,7 @@ class _InputPageState extends State<InputPage> {
       ),),
           GestureDetector(
             onTap: (){
+              CalculatorBrain calc=CalculatorBrain(height: sliderHeight,weight: sliderWeight);
               Navigator.push(context, MaterialPageRoute(builder:  (context)=>ResultScreen()));
             },
             child: Container(
